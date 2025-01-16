@@ -6,6 +6,8 @@ ChooseElectric is a Telegram bot designed to help users decide if switching to a
 
 The bot can be found on Telegram using the username: [@whyAnElectricCarBot](https://t.me/whyAnElectricCarBot).
 
+Additionally, data analysis with the `pandas` library was used to evaluate the fine-tuning training process of the language model. This helped ensure the model's accuracy and reliability when interacting with users.
+
 ---
 
 ## Features
@@ -15,6 +17,7 @@ The bot can be found on Telegram using the username: [@whyAnElectricCarBot](http
 - Calculates monthly and annual costs for gasoline or electricity.
 - Recommends electric vehicle alternatives with links for more information.
 - Integrates OpenAI's fine-tuned language model for enhanced conversational abilities.
+- Leverages data analysis tools to improve training and results.
 
 ---
 
@@ -28,6 +31,17 @@ The bot can be found on Telegram using the username: [@whyAnElectricCarBot](http
   - `openai`
   - `requests`
   - `time`
+  - `pandas`
+
+---
+
+## Fine-Tuning Benefits
+
+The fine-tuning process for the language model enables the bot to:
+
+- **Reduce Costs:** By fine-tuning the model, fewer tokens are required per interaction, which significantly lowers the costs associated with API usage.
+- **Provide Specific Responses:** Fine-tuning ensures the bot delivers precise and tailored recommendations based on user input.
+- **Maintain Consistency:** Responses are more consistent, as the model is trained on domain-specific data.
 
 ---
 
@@ -41,7 +55,7 @@ The bot can be found on Telegram using the username: [@whyAnElectricCarBot](http
 ### Installing Dependencies
 Run the following command to install the required dependencies:
 ```bash
-pip install openai requests
+pip install openai requests pandas
 ```
 
 ---
@@ -66,7 +80,7 @@ pip install openai requests
 
 1. Run the bot from the terminal:
    ```bash
-   python data_analisys.py
+   python main_bot.py
    ```
 
 2. Open Telegram and find your bot by searching for [@whyAnElectricCarBot](https://t.me/whyAnElectricCarBot).
