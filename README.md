@@ -1,146 +1,112 @@
 # ChooseElectric Bot
 
-## Description
-
 ChooseElectric is a Telegram bot designed to help users decide if switching to an electric vehicle is a viable option for them. Based on the information provided by the user, the bot utilizes the OpenAI API to analyze data about the user's current car model, monthly consumption, and other relevant factors to suggest electric alternatives. It also calculates potential savings in costs and emissions. The bot uses a fine-tuned language model to enable natural conversations and provide personalized recommendations.
 
 The bot can be found on Telegram using the username: [@whyAnElectricCarBot](https://t.me/whyAnElectricCarBot).
 
-Additionally, data analysis with the `pandas` library was used to evaluate the fine-tuning training process of the language model. This helped ensure the model's accuracy and reliability when interacting with users.
+Additionally, data analysis with the pandas library was used to evaluate the fine-tuning training process of the language model. This helped ensure the model's accuracy and reliability when interacting with users.
 
 ---
 
 ## Features
 
-- Automatically responds to user messages on Telegram.
-- Analyzes information about vehicles and fuel consumption.
-- Calculates monthly and annual costs for gasoline or electricity.
-- Recommends electric vehicle alternatives with links for more information.
-- Integrates OpenAI's fine-tuned language model for enhanced conversational abilities.
-- Leverages data analysis tools to improve training and results.
+- Provides personalized electric vehicle recommendations.
+- Calculates potential cost savings between fuel and electricity.
+- Suggests specific electric vehicle models.
+- Implements secure handling of user data and API keys.
+- Validates and sanitizes user input to prevent malicious activity.
+- Fine-tuned GPT model for enhanced accuracy in recommendations.
+
+---
+
+## Advantages of Fine-Tuning
+
+Fine-tuning allows the model to be customized for specific use cases, improving its accuracy and relevance in particular domains. In this project, fine-tuning provided the following benefits:
+
+- **Improved Contextual Understanding**: The model was trained on datasets specific to electric vehicles, enabling it to provide precise recommendations.
+- **Enhanced Performance**: Fine-tuning reduced irrelevant or generic responses, ensuring a better user experience.
+- **Cost Efficiency**: By fine-tuning a pre-trained model, the need for extensive data and computational resources was minimized compared to training a model from scratch.
+- **Domain Expertise**: The bot delivers answers tailored to the context of electric vehicles, making it more reliable and useful.
 
 ---
 
 ## Technologies Used
 
-- **Programming Language:** Python
-- **APIs Used:**
-  - Telegram Bot API
-  - OpenAI API (fine-tuned model)
-- **Main Libraries:**
-  - `openai`
-  - `requests`
-  - `time`
-  - `pandas`
+This project leverages the following technologies:
 
----
-
-## Fine-Tuning Benefits
-
-The fine-tuning process for the language model enables the bot to:
-
-- **Reduce Costs:** By fine-tuning the model, fewer tokens are required per interaction, which significantly lowers the costs associated with API usage.
-- **Provide Specific Responses:** Fine-tuning ensures the bot delivers precise and tailored recommendations based on user input.
-- **Maintain Consistency:** Responses are more consistent, as the model is trained on domain-specific data.
-
----
-
-## Requirements
-
-- Python 3.7 or higher
-- Access keys for:
-  - Telegram Bot API
-  - OpenAI API
-
-### Installing Dependencies
-Run the following command to install the required dependencies:
-```bash
-pip install openai requests pandas
-```
-
----
-
-## Configuration
-
-1. **Create a bot on Telegram:**
-   - Go to [BotFather](https://core.telegram.org/bots#botfather).
-   - Create a new bot and obtain the **TOKEN**.
-
-2. **Generate an OpenAI API Key:**
-   - Go to [OpenAI API Keys](https://platform.openai.com/account/api-keys).
-   - Generate a new API key and save it.
-
-3. **Set up the keys in the code:**
-   - Replace `TOKEN` with your Telegram bot token.
-   - Replace `api_key` with your OpenAI key.
+- **Python**: Core programming language for the bot's logic and API integrations.
+- **OpenAI GPT Model**: Used for generating personalized responses based on user input.
+- **Telegram Bot API**: For seamless interaction with users via Telegram.
+- **Python Libraries**:
+  - `openai`: To communicate with the OpenAI API.
+  - `requests`: For handling HTTP requests.
+  - `python-dotenv`: For managing environment variables securely.
+  - `pandas`: For data analysis during the fine-tuning process.
+  - Additional libraries as listed in `requirements.txt`.
 
 ---
 
 ## Usage
 
-1. Run the bot from the terminal:
-   ```bash
-   python main_bot.py
-   ```
-
-2. Open Telegram and find your bot by searching for [@whyAnElectricCarBot](https://t.me/whyAnElectricCarBot).
-
-3. Send a message to the bot with information such as:
-   - Your current car model.
-   - The number of kilometers you drive monthly.
-
-4. The bot will respond with:
-   - Costs of your current vehicle.
-   - Estimated costs for an electric vehicle.
-   - Potential savings.
-   - Recommendations for electric vehicles.
-
----
-
-## Project Structure
-
+Run the bot with:
+```bash
+python main_bot.py
 ```
-chooseElectric/
-|-- data_analisys.py       # Main bot file
-|-- README.md              # Project documentation
-|-- requirements.txt       # Dependency list
-```
+
+Once the bot is running, you can interact with it via Telegram by sending messages to the bot's username.
+
+**The bot can be found on Telegram using the username: [@whyAnElectricCarBot](https://t.me/whyAnElectricCarBot).**
 
 ---
 
 ## Example Conversation
 
-**User:** I have an Audi A8 2020 and drive approximately 700 km per month.  
-**Bot:** 
-- The Audi A8 2020 consumes 8 liters of gasoline per 100 km.
-- With your monthly commute, you would spend 56 liters.
-- This equals €100.8 per month (with gasoline at €1.8/L).
-- An electric vehicle like the Tesla Model 3 would consume 140 kWh per month (€42).
-- Estimated monthly savings: €58.8 (€705.6 annually).
-- [Learn more about the Tesla Model 3](https://www.tesla.com/model3).
+**User**: I currently drive a Toyota Corolla 2018 and I commute 500km per month. Should I switch to an electric vehicle?
+
+**Bot**: The Toyota Corolla 2018 has an average fuel consumption of 6 liters per 100 km. For your monthly commute of 500 km, you would spend approximately 30 liters of gasoline. At an average fuel cost of €1.8 per liter, this translates to €54 per month.
+
+As an alternative, you could consider the Nissan Leaf, an all-electric vehicle. It consumes about 15 kWh per 100 km. For your monthly commute of 500 km, you would consume approximately 75 kWh of electricity. With an average electricity cost of €0.3 per kWh, this amounts to €22.50 per month.
+
+Switching to an electric vehicle could save you €31.50 per month or €378 annually, while also contributing to a cleaner environment.
 
 ---
 
-## Notes
+## Files in the Repository
 
-- Ensure your bot has internet access to interact with the APIs.
-- Monitor OpenAI usage limits to avoid exceeding your budget.
+- **`main_bot.py`**: Main script to run the Telegram bot.
+- **`data_analisys.py`**: Script for analyzing data to ensure model accuracy and performance.
+- **`data_preparation.py`**: Prepares data for training or validation, including cleaning and structuring.
+- **`data_train.jsonl`**: Training data used for fine-tuning the GPT model.
+- **`data_val.jsonl`**: Validation data to evaluate the model's performance and accuracy.
+- **`.env`**: Stores sensitive API keys (not included in the repository for security).
+- **`requirements.txt`**: List of dependencies required to run the project.
 
 ---
 
-## Contributions
+## Fine-Tuning and Data Validation
 
-Contributions are welcome. Please open an [issue](https://github.com/Sergio2205/public_chooseElectric/issues) or create a pull request to discuss changes.
+- **Fine-Tuned Model**: This project uses a fine-tuned version of OpenAI's GPT model to provide highly specific recommendations tailored to the context of electric vehicles.
+- **Data Validation**: Validation datasets (`data_val.jsonl`) were used to measure model accuracy and avoid overfitting.
+- **Data Analysis**: The `data_analisys.py` script analyzes training and validation data to ensure data consistency and relevance.
 
 ---
 
-## Repository
+## Security Features
 
-The code for this bot is available on GitHub: [ChooseElectric Repository](https://github.com/Sergio2205/public_chooseElectric).
+- **Input Sanitization**: All user inputs are sanitized to prevent malicious injection attacks.
+- **Rate Limiting**: Limits the frequency of user messages to prevent abuse or overloading.
+- **API Key Protection**: API keys are stored securely in a `.env` file and never exposed in the source code.
+- **Error Handling**: Comprehensive error handling to ensure smooth operation and logging of issues.
 
 ---
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+---
+
+## Contact
+
+For any questions, feel free to contact: **your-email@example.com**.
 
