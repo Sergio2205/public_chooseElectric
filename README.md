@@ -108,5 +108,5 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ## Contact
 
-For any questions, feel free to contact: **your-email@example.com**.
+For any questions, feel free to contact: **torres.sergio2205@gmail.com**.
 
