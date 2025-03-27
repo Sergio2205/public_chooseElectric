@@ -7,7 +7,7 @@ The bot can be found on Telegram using the username: [@whyAnElectricCarBot](http
 Additionally, data analysis with the pandas library was used to evaluate the fine-tuning training process of the language model. This helped ensure the model's accuracy and reliability when interacting with users.
 
 ---
-
+![Game Preview](image.png)
 ## Features
 
 - Provides personalized electric vehicle recommendations.
